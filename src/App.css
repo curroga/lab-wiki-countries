@@ -3,5 +3,10 @@
 #country-container{
   display: flex;
   justify-content: center;
-  padding: 100px;
+  
+}
+
+.container-details{
+  display: flex;
+  justify-content: center;
 }
