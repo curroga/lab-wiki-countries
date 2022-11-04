@@ -13,7 +13,7 @@ function CountriesList() {
     setIsFetching(true)
     axios.get('https://ih-countries-api.herokuapp.com/countries')
     .then((response) => {
-      //console.log(response.data)
+      //console.log(response)
       setPaisesList(response.data)
       setIsFetching(false)
 
@@ -38,9 +38,8 @@ function CountriesList() {
         >
           {paisesList.map((eachPaises, index) => {
             return (
-              <div className="list-group">
-                <Link
-                  key={eachPaises.alpha2Code + index}
+              <div className="list-group" key={eachPaises.alpha2Code + index}>
+                <Link                
                   className="list-group-item list-group-item-action"
                   to={`/country/${eachPaises.alpha3Code}`}
                 >

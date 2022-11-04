@@ -42,8 +42,15 @@ function CountryDetails() {
               <td>
                 {pais[0].borders.map((eachBorder) => {
                   return (
-                    <ul>
-                      <Link>{eachBorder}</Link>
+                    <ul key={eachBorder}>
+                      
+                      <Link className="list-group-item list-group-item-action"
+                       to={`/country/${eachBorder}`}>
+                      {countries.map((eachCountry) => {
+                        return eachCountry.alpha3Code === eachBorder && eachCountry.name.official
+                      })}
+                      {/* {eachBorder} */}
+                      </Link>
                     </ul>
                   );
                 })}
